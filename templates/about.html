@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+    <!-- About Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 bg-white p-4 rounded shadow-sm">
+                <h2 class="text-center mb-4 text-primary">About This To-Do App</h2>
+                <p class="lead">
+                    Welcome to our simple and effective To-Do app, designed to help you stay organized and productive! This app allows you to create, update, and delete tasks with ease, so you can keep track of your important tasks without any hassle.
+                </p>
+                
+                <h4 class="mt-4">Key Features:</h4>
+                <ul>
+                    <li><strong>Title & Description</strong>: You can easily create tasks by providing a title and a description for each task.</li>
+                    <li><strong>Track Task Creation Date</strong>: The app automatically records the date each task was created, so you can stay on top of your progress.</li>
+                    <li><strong>CRUD Operations</strong>: 
+                        <ul>
+                            <li><strong>Create</strong>: Add a new task with a title and description.</li>
+                            <li><strong>Read</strong>: View all your tasks and their details.</li>
+                            <li><strong>Update</strong>: Modify your task’s title or description as needed.</li>
+                            <li><strong>Delete</strong>: Remove tasks when they are completed or no longer necessary.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4 class="mt-4">How It Works:</h4>
+                <p>
+                    <strong>Title</strong>: A short, descriptive title for your task (e.g., "Finish homework").<br>
+                    <strong>Description</strong>: A longer description where you can add more details or instructions for the task.<br>
+                    <strong>Date Created</strong>: Automatically recorded when the task is created.
+                </p>
+
+                <p class="mt-4">
+                    This app is designed to be minimal and user-friendly, with just the right features to help you stay organized. Keep your to-dos simple, clear, and manageable.
+                </p>
+
+                <div class="text-center">
+                    <a href="/" class="btn btn-primary btn-lg mt-4">Go to Home Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

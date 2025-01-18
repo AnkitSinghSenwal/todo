@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title %}Update - {% endblock title %}
+{% block body%}
+    <!-- Update To-Do Form -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-white p-4 rounded shadow-sm">
+                <h2 class="text-center mb-4 text-primary">Update To-Do</h2>
+                <form action="/update/{{todo.id}}" method="POST">
+                    <!-- Title Field -->
+                    <div class="mb-3">
+                        <label for="todoTitle" class="form-label">Title</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="todoTitle" 
+                            name="todoTitle" 
+                            placeholder="Enter the task title" 
+                            value="{{ todo.title }}" 
+                            required>
+                    </div>
+
+                    <!-- Description Field -->
+                    <div class="mb-3">
+                        <label for="todoDescription" class="form-label">Description</label>
+                        <textarea 
+                            class="form-control" 
+                            id="todoDescription" 
+                            name="todoDescription" 
+                            rows="4" 
+                            placeholder="Enter the task description">{{ todo.description }}</textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success btn-lg">Update Task</button>
+                        <a href="/" class="btn btn-secondary btn-lg ms-3">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock body%}

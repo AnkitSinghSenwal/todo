@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %} Home{% endblock title %}
+{% block  body %}
+
+
+    <div class="container d-flex flex-column align-items-center">
+      <h3>Your todo</h3>
+      <form action='/' method="POST">
+        <div class="mb-3">
+          <label for="todoTitle" class="form-label"
+            >Todo title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="todoTitle"
+            name="todoTitle"
+            aria-describedby="todotitle"
+            placeholder="Something..."
+          />
+        </div>
+        <div class="mb-3">
+          <label for="todoDescription" class="form-label">Todo Description</label>
+          input
+          
+          <textarea
+            type="text"
+            class="form-control"
+            id="todoDescription"
+            name="todoDescription"
+            placeholder="Something..."
+          /></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </form>
+    </div>
+
+
+
+    <div class="container d-flex flex-column align-items-center">
+      {% if allTodos|length == 0 %}
+      <h3 class="my-3 badge text-bg-primary fs-6">No todo yet, Add some...</h3>
+      {%else%}
+      <h3 class="my-3 badge text-bg-primary fs-6">Your ToDo List </h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created on</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in allTodos %} 
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{todo.title}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.date_created}}</td>
+            <td>
+              <a href="/delete/{{todo.id}}" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+              <a href="/update/{{todo.id}}" type="button" class="btn btn-sm btn-outline-info">Update</a>
+            </td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+
+      </table>
+      {% endif %}
+    </div>
+
+
+
+{% endblock  body %}
