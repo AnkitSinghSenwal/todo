@@ -66,5 +66,11 @@ def update(id):
     
     return render_template('update.html', todo = todo)
 
+@app.template_filter('formatdatetime')
+def format_datetime(value, format='%Y-%m-%d %H:%M'):
+    return value.strftime(format)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
