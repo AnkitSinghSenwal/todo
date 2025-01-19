@@ -73,4 +73,4 @@ def format_datetime(value, format='%Y-%m-%d %H:%M'):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=5000)
